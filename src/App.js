@@ -11,7 +11,7 @@ import Clarifai from 'clarifai'
 
 
 const app = new Clarifai.App({
- apiKey: 'a9aedc8217754977b1d9994e881f3ec7'
+ apiKey: 'ADDKEY'
 });
 
 
