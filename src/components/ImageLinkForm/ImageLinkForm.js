@@ -1,6 +1,5 @@
 import React from 'react';
 import 'tachyons';
-import Tilt from 'react-tilt'
 import './ImageLinkForm.css'
 
 const ImageLinkForm=({onInputChange,onButtonSubmit})=>{

@@ -1,36 +1,18 @@
 import React from 'react';
 import 'tachyons';
 
-const Rank=()=>{
 
-return(
-<div>
-
-		<div className='white f3 '>
-
-			<p>
-				{'Sujith , Your rank is ..'}
-
-			</p>	
-
-		</div>
-
-
-		<div className='white f2 '>
-
-			<p>
-				{'#3'}
-
-			</p>	
-
-		</div>
-
-</div>
-
-	);
-	
-	}
-
-
+const Rank = ({ name, entries }) => {
+  return (
+    <div>
+      <div className='white f3'>
+        {`${name}, your current entry count is...`}
+      </div>
+      <div className='white f1'>
+        {entries}
+      </div>
+    </div>
+  );
+}
 
 export default Rank;

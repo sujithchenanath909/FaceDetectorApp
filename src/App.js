@@ -42,10 +42,21 @@ this.state={
   imageSource:'',
    box: {},
    route:'signIn',
-   isSignedIn:false
+   isSignedIn:false,
+   user:{
+
+      id:'',
+      name:'',
+      email:'',
+      password:'',
+      entries:0
+
+   }
 }
 
 }
+
+
 
 onInputChange=(event)=>{
 
@@ -87,15 +98,27 @@ calculateFaceLocation = (data) => {
     this.setState({route:value});
 
   }
+loadUser=(data)=>{
 
+  this.setState({user:{
+
+    id:data.id,
+    name:data.name,
+    email:data.email,
+    password:data.password,
+    entries:data.entries
+
+  }})
+
+}
 
 onButtonSubmit=()=>{
 
  
  this.setState({imageSource:this.state.input});
  
- app.models.
- predict(
+ app.models
+ .predict(
   Clarifai.FACE_DETECT_MODEL,
   this.state.input
   ).then( response => this.displayFaceBox(this.calculateFaceLocation(response)))
@@ -121,12 +144,14 @@ return (
 
       <div>
        <Logo/>
-       <Rank/>
+       <Rank  name={this.state.user.name}
+                entries={this.state.user.entries} 
+                />
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
        <FaceRecognition box={this.state.box}  imageSource={this.state.imageSource}/> 
        </div>
        :
-       <Register onRouteChange={this.onRouteChange}/>
+       <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
        )
      
      }
