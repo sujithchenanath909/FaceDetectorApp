@@ -25,7 +25,8 @@ class SignIn extends React.Component {
 		this.setState({SignInPassword:event.target.value})
 	}
 
-	onSubmitSignIn=()=>{
+	onSubmitSignIn2=()=>{
+		console.log('Inside submit signIn')
 		fetch('http://localhost:3000/signin',{
 
 			method:'post',
@@ -49,6 +50,11 @@ class SignIn extends React.Component {
 		})
 
 		
+	}
+
+
+	onSubmitSignIn=()=>{
+		console.log('Inside submit signIn')
 	}
 
 render(){
