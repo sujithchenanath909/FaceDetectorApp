@@ -69,7 +69,7 @@ class Register extends React.Component {
 		return(
 			<article className="mw6 center  br3 pa3 shadow-5 pa4-ns mv3 ba b--black-10">
 					<main className="pa4 black-80">
-				  <form className="measure ">
+				  <div className="measure ">
 				    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
 				      <legend className="f2 fw6 ph0 mh0">Register</legend>
 				         <div className="mt3">
@@ -111,7 +111,7 @@ class Register extends React.Component {
 				      <p 
 				      onClick={()=> onRouteChange('register')} className="f6 link dim black db">Register</p>
 				    </div>
-				  </form>
+				  </div>
 				</main>
 				 	
 			</article>
